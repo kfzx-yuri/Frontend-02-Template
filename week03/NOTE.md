@@ -85,10 +85,11 @@
             * Member Expression放等号左边，赋值给哪个对象的哪个属性
 
     + Runtime-Type Convertion：
-        *
+        * 
         * Unboxing：拆箱转换，将Object转换为基本类型
             * ToPrimitive：发生在诸如Object参与运算的情况，都会调用ToPrimitive。一个对象有3个方法会影响到ToPrimitive，分别是ToString                ()、valueOf()和[Symbol.toPrimitive]()。其中[Symbol.toPrimitive]()如果有定义，会忽略其他2个方法。                    转Number会优先调用valueOf()，一定会用到字符串的场景会调用toString()
         * Boxing：装箱转换
+          ![image](https://github.com/kfzx-yuri/Frontend-02-Template/blob/master/week03/Boxing.png)
 
 - Statement：表达式+关键字+辅助符号，形成语句
     + Grammer角度：简单语句、复合语句和声明
