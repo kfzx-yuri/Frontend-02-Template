@@ -85,10 +85,11 @@
             * Member Expression放等号左边，赋值给哪个对象的哪个属性
 
     + Runtime-Type Convertion：
-        *
+        * ![image](https://github.com/kfzx-yuri/Frontend-02-Template/blob/master/week03/Type%20Convertion.png)
         * Unboxing：拆箱转换，将Object转换为基本类型
             * ToPrimitive：发生在诸如Object参与运算的情况，都会调用ToPrimitive。一个对象有3个方法会影响到ToPrimitive，分别是ToString                ()、valueOf()和[Symbol.toPrimitive]()。其中[Symbol.toPrimitive]()如果有定义，会忽略其他2个方法。                    转Number会优先调用valueOf()，一定会用到字符串的场景会调用toString()
         * Boxing：装箱转换
+          ![image](https://github.com/kfzx-yuri/Frontend-02-Template/blob/master/week03/Boxing.png)
 
 - Statement：表达式+关键字+辅助符号，形成语句
     + Grammer角度：简单语句、复合语句和声明
@@ -158,10 +159,12 @@
             * LexicalEnvironment：执行代码中所需要访问的环境，即保存变量的环境，this、new.target、super、变量
             * VariableEnvironment：用var声明的变量所声明的环境。历史包袱
         * Environment会形成链式结构，每个节点又称为Environment Record：
-
+           ![image](https://github.com/kfzx-yuri/Frontend-02-Template/blob/master/week03/Environment%20Record.png)
 
         * 每个函数都会形成一个闭包(Closure)，其分为代码部分和环境部分。
             * 环境部分由一个Object和一个变量的序列来组成，即Environment Record
+            * ex:
+              ![image](https://github.com/kfzx-yuri/Frontend-02-Template/blob/master/week03/Closure.png)
 
     + Realm
         * 在JS引擎中，所有内置对象都被放置在Realm中。根据不同的外部环境，会创建不同的Realm
