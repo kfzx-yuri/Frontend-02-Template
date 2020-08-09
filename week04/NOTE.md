@@ -31,6 +31,7 @@
                 * CONNECT：多用于HTTPS和WebSocket
                 * OPTIONS、TRACE：多用于调试
         * Request Headers：包含多行，每行是以冒号分割的KV对，行数不固定，以一个空行标注结束
+        ![image](https://github.com/kfzx-yuri/Frontend-02-Template/blob/master/week04/Request-Header.png)
         * Request Body：也是KV对，由Content-Type规定其分隔符。因此HTTP里Content-Type是一个必要的字段，需要有默认值，常见的有：
             * application/json
             * application/x-www-form-urlencoded：用HTML的form标签提交产生的HTML请求，默认产生此格式
@@ -53,5 +54,6 @@
                     * 500：服务端错误
                     * 503：服务端暂时性错误
         * Response Headers：包含多行，每行是以冒号分割的KV对，行数不固定，以一个空行标注结束
+        ![image](https://github.com/kfzx-yuri/Frontend-02-Template/blob/master/week04/Reponse-Header.png)
         * Response Body：内容中允许存在任何字符，由Content-Type规定其格式。
             * node默认格式是chunk body。由一个16进账的数字单独占一行，后面跟着内容部分，再后面又是一个16进制的数字。直到最后一个16进制的0，得到空的chunk，标注Body的结束
