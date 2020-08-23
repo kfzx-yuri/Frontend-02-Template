@@ -9,7 +9,7 @@
         * &quot：双引号
         * &amp：&符
         * &lt：<符
-        * &rt: >符
+        * &gt: >符
     + HTML的三个常用namespace：
         * html namespace
         * MathML namespace
@@ -17,27 +17,27 @@
 
 - HTML标签语义
     + &lt;aside&gt;：定义article标签(页面主体)以外的内容，可用来包裹侧边栏
-    + <a>：包裹超链接
-    + <main>：定义页面的主体内容部分，整个HTML只有一个main标签
-    + <article>：定义文章
-    + <hgroup>：当有几个标题共同组成页面完整标题时，用其包裹
-    + <hr>：横线，表示场景发生转换
-    + <abbr>：表示缩写
-    + <strong>：表示某个词在整篇文章中的重要性，不改变语义
-    + <em>：表示在一个句子中重点强调的词
-    + <figure>：带文字或者带说明的图表信息
+    + &lt;a&gt;：包裹超链接
+    + &lt;main&gt;：定义页面的主体内容部分，整个HTML只有一个main标签
+    + &lt;article&gt;：定义文章
+    + &lt;hgroup&gt;：当有几个标题共同组成页面完整标题时，用其包裹
+    + &lt;hr&gt;：横线，表示场景发生转换
+    + &lt;abbr&gt;：表示缩写
+    + &lt;strong&gt;：表示某个词在整篇文章中的重要性，不改变语义
+    + &lt;em&gt;：表示在一个句子中重点强调的词
+    + &lt;figure&gt;：带文字或者带说明的图表信息
         * <figure>
             <img></img>
             <figcaption>note</figcaption>
           </figure>
-    + <ol>：定义有序列表，使用css的counter来改变列表序
-    + <nav>：导航
-    + <dfn>：表示定义项目
-    + <pre>：表示预格式文本，这样不会被当成普通文本处理
-    + <samp>：例子
-    + <code>：代码文本
-    + <footer>：不属于页面主体内容的部分，且位于页脚
-    + 为了使html文本里的html标签不会被处理成html代码，需要使用&lt和&rt转义
+    + &lt;ol&gt;：定义有序列表，使用css的counter来改变列表序
+    + &lt;nav&gt;：导航
+    + &lt;dfn&gt;：表示定义项目
+    + &lt;pre&gt;：表示预格式文本，这样不会被当成普通文本处理
+    + &lt;samp&gt;：例子
+    + &lt;code&gt;：代码文本
+    + &lt;footer&gt;：不属于页面主体内容的部分，且位于页脚
+    + 为了使html文本里的html标签不会被处理成html代码，需要使用&lt和&gt转义
     + 使用<p>标签和class结合，来处理缺乏对应标签的语义
 
 - HTML语法
