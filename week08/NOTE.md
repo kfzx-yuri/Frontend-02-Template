@@ -61,24 +61,24 @@
             * DOM树上的节点都统一继承自Node类
             * 导航类操作：分为节点的导航和元素的导航
                 节点的导航：
-                    parentNode：寻找父节点
-                    childNodes：寻找子节点
-                    firstChild：寻找第一个子节点
-                    lastChild：寻找最后一个子节点
-                    nextSibling：寻找下一个邻居节点
-                    previousSibling：寻找上一个邻居节点
+                    * parentNode：寻找父节点
+                    * childNodes：寻找子节点
+                    * firstChild：寻找第一个子节点
+                    * lastChild：寻找最后一个子节点
+                    * nextSibling：寻找下一个邻居节点
+                    * previousSibling：寻找上一个邻居节点
                 元素的导航：会忽略文本节点，因此可避免获得空白文本
-                    parentElement：寻找父元素，实际上与parentNode等价。因为非Element的Node不会有子节点
-                    children：寻找子元素
-                    firstElementChild：寻找第一个子元素
-                    lastElementChild：寻找最后一个子元素
-                    nextElementSibling：寻找下一个邻居元素
-                    previousElementSibling：寻找上一个邻居元素
+                    * parentElement：寻找父元素，实际上与parentNode等价。因为非Element的Node不会有子节点
+                    * children：寻找子元素
+                    * firstElementChild：寻找第一个子元素
+                    * lastElementChild：寻找最后一个子元素
+                    * nextElementSibling：寻找下一个邻居元素
+                    * previousElementSibling：寻找上一个邻居元素
             * 修改类操作：实际上针对的也是Element，因为非Element的Node不会有子节点
-                appendChild(node)：往最后插入元素
-                insertBefore(newNode,referenceNode)：将newNode插入到referenceNode之前
-                removeChild(node)：移除node节点，但仍保留在内存中，可以用额外变量保存此引用。一个节点的移除只能在其父节点上进行，无法移除本身
-                replaceChild(newNode,oldNode)：先删除后替换
+                * appendChild(node)：往最后插入元素
+                * insertBefore(newNode,referenceNode)：将newNode插入到referenceNode之前
+                * removeChild(node)：移除node节点，但仍保留在内存中，可以用额外变量保存此引用。一个节点的移除只能在其父节点上进行，无法移除本身
+                * replaceChild(newNode,oldNode)：先删除后替换
             * 高级操作：
                 * compareDocumentPosition：用于比较两个节点中关系的函数。
                 ![image](https://github.com/kfzx-yuri/Frontend-02-Template/blob/master/week08/compareDocumentPosition-1.png)
