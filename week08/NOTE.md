@@ -16,7 +16,7 @@
         * SVG namespace
 
 - HTML标签语义
-    + &lt;aside&rt; ：定义article标签(页面主体)以外的内容，可用来包裹侧边栏
+    + &lt;aside&rt：定义article标签(页面主体)以外的内容，可用来包裹侧边栏
     + <a>：包裹超链接
     + <main>：定义页面的主体内容部分，整个HTML只有一个main标签
     + <article>：定义文章
