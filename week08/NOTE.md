@@ -60,14 +60,14 @@
         * 节点部分的API：
             * DOM树上的节点都统一继承自Node类
             * 导航类操作：分为节点的导航和元素的导航
-                节点的导航：
+                * 节点的导航：
                     * parentNode：寻找父节点
                     * childNodes：寻找子节点
                     * firstChild：寻找第一个子节点
                     * lastChild：寻找最后一个子节点
                     * nextSibling：寻找下一个邻居节点
                     * previousSibling：寻找上一个邻居节点
-                元素的导航：会忽略文本节点，因此可避免获得空白文本
+                * 元素的导航：会忽略文本节点，因此可避免获得空白文本
                     * parentElement：寻找父元素，实际上与parentNode等价。因为非Element的Node不会有子节点
                     * children：寻找子元素
                     * firstElementChild：寻找第一个子元素
