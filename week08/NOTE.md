@@ -105,18 +105,18 @@
         * Range API：比节点部分的API功能更强大，性能更好，但应用性较差
             * HTML文档流中有起始点和终止点的一段范围，可以跨层级，起点先于终点即可
             * 创建Range：
-                var range = new Range();
-                range.setStart(element,offset);
-                range.setEnd(element,offset);
-                var range = document.getSelection().getRangeAt(0);
-                range.setStartBefore();
-                range.setEndBefore();
-                range.serStartAfter();
-                range.setEndAfter();
-                range.selectNode();
-                range.selectNodeContents():
-                range.extractContents()：返回一个fragment。对应内容会从DOM树中移除
-                range.insertNode(document.createTextNode("aaa"))
+                * var range = new Range();
+                * range.setStart(element,offset);
+                * range.setEnd(element,offset);
+                * var range = document.getSelection().getRangeAt(0);
+                * range.setStartBefore();
+                * range.setEndBefore();
+                * range.serStartAfter();
+                * range.setEndAfter();
+                * range.selectNode();
+                * range.selectNodeContents():
+                * range.extractContents()：返回一个fragment。对应内容会从DOM树中移除
+                * range.insertNode(document.createTextNode("aaa"))
     + CSSOM：CSS对象模型
         * document.styleSheets：获取当前页面的CSS，包括以style标签嵌入和以link标签引入的CSS
         * document.styleSheets[0].cssRules
