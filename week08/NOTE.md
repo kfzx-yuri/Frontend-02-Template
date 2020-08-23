@@ -38,21 +38,21 @@
     + &lt;code&gt;：代码文本
     + &lt;footer&gt;：不属于页面主体内容的部分，且位于页脚
     + 为了使html文本里的html标签不会被处理成html代码，需要使用&lt和&gt转义
-    + 使用<p>标签和class结合，来处理缺乏对应标签的语义
+    + 使用&lt;p&gt;标签和class结合，来处理缺乏对应标签的语义
 
 - HTML语法
     + 合法元素：
         * Element：&lt;tagname&gt;...&lt;/tagname&gt;
         * Text：text
-        * Comment：<!-- comments -->
+        * Comment：&lt;!-- comments --&gt;
         * DocumentType：&lt;!Doctype html&gt;
         * ProcessingInstruction：&lt;?a 1?&gt;，预处理语法，把1传给a处理器。只有第一个空格有分割作用，其余空格是数据
         * CDATA：&lt;![CDATA[]]&gt;，文本节点的另一种表示法
     + 字符引用：
         * &#161：代表使用ASCII码为161的字符
-        * &amp;
-        * &lt;
-        * &quot;
+        * &amp
+        * &lt
+        * &quot
 
 - 浏览器API
     + DOM API：分为4个部分：
