@@ -81,10 +81,15 @@
                 replaceChild(newNode,oldNode)：先删除后替换
             * 高级操作：
                 compareDocumentPosition：用于比较两个节点中关系的函数。
+                ![image](https://github.com/kfzx-yuri/Frontend-02-Template/blob/master/week08/compareDocumentPosition-1.png)
+                ![image](https://github.com/kfzx-yuri/Frontend-02-Template/blob/master/week08/compareDocumentPosition-2.png)
                 contains：检查一个节点是否包含另一个节点
+                ![image](https://github.com/kfzx-yuri/Frontend-02-Template/blob/master/week08/contains.png)
                 isEqualNode：检查两个节点是否完全相同
+                ![image](https://github.com/kfzx-yuri/Frontend-02-Template/blob/master/week08/isEqualNode.png)
                 isSameNode：检查2个节点是否是同一个节点(MDN上标注已被DOM level4废弃)，可以用"==="代替
                 cloneNode：复制一个节点，如果传入参数true，会连同子元素一起做深拷贝
+                ![image](https://github.com/kfzx-yuri/Frontend-02-Template/blob/master/week08/cloneNode.png)
 
         * 事件部分的API：JS与HTML元素做交互
            * addEventListener：三个参数：type,listener,options
