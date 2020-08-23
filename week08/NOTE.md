@@ -42,12 +42,12 @@
 
 - HTML语法
     + 合法元素：
-        * Element：<tagname>...</tagname>
+        * Element：&lt;tagname&gt;...&lt;/tagname&gt;
         * Text：text
         * Comment：<!-- comments -->
-        * DocumentType：<!Doctype html>
-        * ProcessingInstruction：<?a 1?>，预处理语法，把1传给a处理器。只有第一个空格有分割作用，其余空格是数据
-        * CDATA：<![CDATA[]]>，文本节点的另一种表示法
+        * DocumentType：&lt;!Doctype html&gt;
+        * ProcessingInstruction：&lt;?a 1?&gt;，预处理语法，把1传给a处理器。只有第一个空格有分割作用，其余空格是数据
+        * CDATA：&lt;![CDATA[]]&gt;，文本节点的另一种表示法
     + 字符引用：
         * &#161：代表使用ASCII码为161的字符
         * &amp;
