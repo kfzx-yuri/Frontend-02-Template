@@ -1,0 +1,54 @@
+<style>
+    .light{
+        width:100px;
+        height: 100px;
+        display: inline-block;
+        border-radius: 50%;
+        background-color: black;
+        border: 1px solid black;
+    }
+    .red{
+        background-color: red;
+    }
+    .green{
+        background-color: green;
+    }
+    .yellow{
+        background-color: yellow;
+    }
+</style>
+
+<div id="body"></div>
+
+<script>
+
+let state = turnTo;
+let body = document.getElementById("body");
+
+function initUI(){
+    for(let i = 0;i < 3; i++){
+        let light = document.createElement("div");
+        light.classList.add("light");
+        body.appendChild(light);
+    }
+    state = state(0);
+}
+
+function turnTo(seq){
+    if(seq === 0){
+        body.children[2].classList.remove("green");
+        body.children[0].classList.add("red");
+        setTimeout(() => {return turnTo(1)},5000);
+    }else if(seq === 1){
+        body.children[0].classList.remove("red");
+        body.children[1].classList.add("yellow");
+        setTimeout(() => {return turnTo(2)},2000);
+    }else{
+        body.children[1].classList.remove("yellow");
+        body.children[2].classList.add("green");
+        setTimeout(() => {return turnTo(0)},10000);
+    }
+}
+
+initUI();
+</script>

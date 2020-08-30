@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>API分类</title>
+</head>
+<body>
+    <script>
+        let names = Object.getOwnPropertyNames(window);
+
+        function filterOut(names,props){
+            let set = new Set();
+            props.forEach(o => set.add(o));
+            return names.filter(e => !set.has(e));
+        }
+
+        //ECMA262
+        {
+            let js = new Set();
+            let objects = ["globalThis", "Infinity", "NaN", "undefined", "eval", "isFinite", "isNaN", "parseFloat", "parseInt", "decodeURI", "decodeURIComponent", "encodeURI", "encodeURIComponent", "Array", "ArrayBuffer", "Boolean", "DataView", "Date", "Error", "EvalError", "Float32Array", "Float64Array", "Function", "Int8Array", "Int16Array", "Int32Array", "Map", "Number", "Object", "Proxy", "Promise", "RangeError", "ReferenceError", "RegExp", "Set", "String", "Symbol", "SyntaxError", "TypeError", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array", "URIError", "WeakMap", "WeakSet", "JSON", "Math", "Reflect", "escape", "unescape"];
+            objects.forEach(o => js.add(o));
+            names = names.filter(e => !js.has(e));
+        }
+
+        //Node
+        {
+            names = names.filter(e => {
+                try{
+                    return !(window[e].prototype instanceof Node)
+                }catch(err){
+                    return true;
+                }
+            }).filter(e => e != "Node");
+        }
+
+        //events
+        {
+            names = names.filter(e => !e.match(/^on/));
+        }
+
+        //webkit private
+        {
+            names = names.filter(e => !e.match(/^webkit/));
+        }
+
+        //https://dom.spec.whatwg.org/
+        {
+            let dom_set = new Set();
+            let spec_dom = ["Evemt","CustomEvent","EventTarget","AbortController","AbortSignal","NodeList","HTMLCollection","MutationObserver","MutationRecord","Node","Document","DOMImplementation","DocumentType","DocumentFragment","ShadowRoot","Element"," NamedNodeMap","Attr","CharacterData","Text","CDATASection","ProcessingInstruction","Comment","AbstractRange","StaticRange","Range","NodeIterator","TreeWalker","NodeFilter","DOMTokenList","XPathResult","XPathExpression","XPathEvaluator"];
+            spec_dom.forEach(o => dom_set.add(o));
+            names = names.filter(e => !dom_set.has(e));
+        }
+
+        //https://console.spec.whatwg.org/
+        {
+            let console_set = new Set();
+            console_set.add("console");
+            names = names.filter(e => !console_set.has(e));
+        }
+
+        //https://encoding.spec.whatwg.org/
+        {
+            let encoding_set = new Set();
+            let spec_encoding = ["TextDecoder","TextEncoder","TextDecoderStream","TextEncoderStream",""];
+            spec_encoding.forEach(o => encoding_set.add(o));
+            names = names.filter(e => !encoding_set.has(e));
+        }
+
+        //https://fetch.spec.whatwg.org/
+        {
+            let fetch_set = new Set();
+            let spec_fetch = ["Header","Request","Response"];
+            spec_fetch.forEach(o => fetch_set.add(o));
+            names = names.filter(e => !fetch_set.has(e));
+        }
+
+        //https://notifications.spec.whatwg.org/
+        {
+            let noti_set = new Set();
+            let spec_noti = ["Notification","ServiceWorkerRegistration","ServiceWorker"];
+            spec_noti.forEach(o => noti_set.add(o));
+            names = names.filter(e => !noti_set.has(e));
+        }
+
+        //https://storage.spec.whatwg.org/#api
+        {
+            let storage_set = new Set();
+            let spec_storage = ["StorageManager"];
+            spec_storage.forEach(o => storage_set.add(o));
+            names = names.filter(e => !storage_set.has(e));
+        }
+        
+        //https://url.spec.whatwg.org/
+        {
+            let url_set = new Set();
+            let spen_url = ["URL"];
+            url_set.add("URL");
+            names = names.filter(e => !url_set.has(e));
+        }
+
+        //https://xhr.spec.whatwg.org/
+        {
+            let xhr_set = new Set();
+            let spec_xhr = ["XMLHttpRequest", "XMLHttpRequestEventTarget", "XMLHttpRequestUpload", "FormData", "ProgressEvent"];
+            spec_xhr.forEach(o => xhr_set.add(o));
+            names = names.filter(e => !xhr_set.has(e));
+        }
+
+        //https://html.spec.whatwg.org/multipage/indices.html#all-interfaces
+        {
+            let html_set = new Set();
+            let spec_html = ["ApplicationCache", "AudioTrack", "AudioTrackList", "BarProp", "BeforeUnloadEvent", "BroadcastChannel", "CanvasGradient", "CanvasPattern", "CanvasRenderingContext2D", "CloseEvent", "CustomElementRegistry", "DOMParser", "DOMStringList", "DOMStringMap", "DataTransfer", "DataTransferItem", "DataTransferItemList", "DedicatedWorkerGlobalScope", "Document", "DragEvent", "ElementInternals", "ErrorEvent", "EventSource", "External", "FormDataEvent", "HTMLAllCollection", "HTMLAnchorElement", "HTMLAreaElement", "HTMLAudioElement", "HTMLBRElement", "HTMLBaseElement", "HTMLBodyElement", "HTMLButtonElement", "HTMLCanvasElement", "HTMLDListElement", "HTMLDataElement", "HTMLDataListElement", "HTMLDetailsElement", "HTMLDialogElement", "HTMLDirectoryElement", "HTMLDivElement", "HTMLElement", "HTMLEmbedElement", "HTMLFieldSetElement", "HTMLFontElement", "HTMLFormControlsCollection", "HTMLFormElement", "HTMLFrameElement", "HTMLFrameSetElement", "HTMLHRElement", "HTMLHeadElement", "HTMLHeadingElement", "HTMLHtmlElement", "HTMLIFrameElement", "HTMLImageElement", "HTMLInputElement", "HTMLLIElement", "HTMLLabelElement", "HTMLLegendElement", "HTMLLinkElement", "HTMLMapElement", "HTMLMarqueeElement", "HTMLMediaElement", "HTMLMenuElement", "HTMLMetaElement", "HTMLMeterElement", "HTMLModElement", "HTMLOListElement", "HTMLObjectElement", "HTMLOptGroupElement", "HTMLOptionElement", "HTMLOptionsCollection", "HTMLOutputElement", "HTMLParagraphElement", "HTMLParamElement", "HTMLPictureElement", "HTMLPreElement", "HTMLProgressElement", "HTMLQuoteElement", "HTMLScriptElement", "HTMLSelectElement", "HTMLSlotElement", "HTMLSourceElement", "HTMLSpanElement", "HTMLStyleElement", "HTMLTableCaptionElement", "HTMLTableCellElement", "HTMLTableColElement", "HTMLTableElement", "HTMLTableRowElement", "HTMLTableSectionElement", "HTMLTemplateElement", "HTMLTextAreaElement", "HTMLTimeElement", "HTMLTitleElement", "HTMLTrackElement", "HTMLUListElement", "HTMLUnknownElement", "HTMLVideoElement", "HashChangeEvent", "History", "ImageBitmap", "ImageBitmapRenderingContext", "ImageData", "Location", "MediaError", "MessageChannel", "MessageEvent", "MessagePort", "MimeType", "MimeTypeArray", "Navigator", "OffscreenCanvas", "OffscreenCanvasRenderingContext2D", "PageTransitionEvent", "Path2D", "Plugin", "PluginArray", "PopStateEvent", "PromiseRejectionEvent", "RadioNodeList", "SharedWorker", "SharedWorkerGlobalScope", "Storage", "StorageEvent", "SubmitEvent", "TextMetrics", "TextTrack", "TextTrackCue", "TextTrackCueList", "TextTrackList", "TimeRanges", "TrackEvent", "ValidityState", "VideoTrack", "VideoTrackList", "WebSocket", "Window", "Worker", "WorkerGlobalScope", "WorkerLocation", "WorkerNavigator"];
+            spec_html.forEach(o => html_set.add(o));
+            names = names.filter(e => !html_set.has(e));
+
+        }
+        console.log(names);
+    </script>
+</body>
+</html>
